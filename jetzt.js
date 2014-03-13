@@ -1040,15 +1040,17 @@
   };
   
   function scrape() {
-      var readable = new Readability();
+      /* var readable = new Readability();
       readable.setSkipLevel(3);
       saxParser(document.childNodes[document.childNodes.length - 1], readable);
-      var article = readable.getArticle();
+      readable._getCandidateNode(); */
+      var article = grabArticle(window.document);
 
       //Hack because article.hmtl is a string
-      var pseudo = window.document.createElement('div');
+      /* var pseudo = window.document.createElement('div');
       pseudo.innerHTML = article.html;
-      return pseudo;
+      return pseudo;*/
+      return article;
   }
 
   function select() {
