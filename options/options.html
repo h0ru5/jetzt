@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- Replace this with your extension's title. -->
 		<title>Options - jetzt speed reader</title>
 		<link rel="stylesheet" type="text/css" href="styles/options.css" />
 		<link rel="stylesheet" type="text/css" href="styles/options-widgets.css" />	
@@ -14,7 +13,6 @@
 				<li>
 					<a href="chrome://extensions">Extensions</a>
 					<ul>
-						<!-- Replace this with your extension's title. -->
 						<li>jetzt</li>
 					</ul>
 				</li>
@@ -23,62 +21,61 @@
 			</ul>
 		</nav>
 		<header>
-			<!-- Replace this with your extension's title. -->
 			<h1>jetzt speed reader</h1>
 		</header>
 		
 		<div ng-controller="OptionsController">
 		
-		<!-- Replace everything below this point with your extension's options. -->
-		<section>
-			<h3>View</h3>
-			<p>Options to configure the visual appearance of the speed-reader:</p>
-			<p>Color for Selection:</p>
+			<section>
+				<h3>View</h3>
+				<p>Options to configure the visual appearance of the speed-reader:</p>
+				<p>Color for Selection:</p>
 				<select id="selection_color" ng-model="options.view.selection_color">
-            <option value="red">red</option>
-            <option value="green">green</option>
-            <option value="blue">blue</option>
-            <option value="yellow">yellow</option>
-        </select>
+		            <option value="red">red</option>
+		            <option value="green">green</option>
+		            <option value="blue">blue</option>
+		            <option value="yellow">yellow</option>
+		        </select>
+			</section>
 			
-			<br />
-		</section>
-		<section>
-			<h3>Control</h3>
-			<p>Options to configure keybindings:</p>
-			<p>TBD</p>
-		</section>
-		<section>
-			<h3>Reading</h3>
-			<p>Options to tweak the speed-reader</p>
-			<label for="wpm">
-				Target WPM: 
-				<input type="number" placeholder="400" id="wpm" ng-model="options.target_wpm">
-			</label>
-		</section>
-		<section>
-			<h3>Lab options</h3>
-			<p>Advanced and experimental settings</p>
-			<button ng-click="showLab()">I know what I am doing!</button>
-		</section>
-		
-		<div class="overlay transparent hidden">
-			<div class="page hidden" id="overlayDetails">
-				<h1>Lab settings</h1>
-				<button class="closeButton"></button>
-				<div class="content">
-					<p>This is the place for some experimental or advanced settings</p>
-					<p>Right now, it is misused to display the current options:
-					<pre>{{options | json}}</pre>
-					</p>
+			<section>
+				<h3>Control</h3>
+				<p>Options to configure keybindings:</p>
+				<p>TBD</p>
+			</section>
+			
+			<section>
+				<h3>Reading</h3>
+				<p>Options to tweak the speed-reader</p>
+				<label for="wpm">
+					Target WPM: 
+					<input type="number" placeholder="400" id="wpm" ng-model="options.target_wpm">
+				</label>
+			</section>
+			
+			<section>
+				<h3>Lab options</h3>
+				<p>Advanced and experimental settings</p>
+				<button ng-click="showLab()">I know what I am doing!</button>
+			</section>
+			
+			<div class="overlay transparent hidden">
+				<div class="page hidden" id="overlayDetails">
+					<h1>Lab settings</h1>
+					<button class="closeButton"></button>
+					<div class="content">
+						<p>This is the place for some experimental or advanced settings</p>
+						<p>Right now, it is misused to display the current options:
+						<pre>{{options | json}}</pre>
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-	
-		<section>
-			<button id="save" ng-click="save()">Save</button>
-    		<button id="cancel" ng-click="load()">Cancel</button>
-		</section>
+		
+			<section>
+				<button id="save" ng-click="save()">Save</button>
+	    		<button id="cancel" ng-click="load()">Cancel</button>
+			</section>
 		
 		</div>
 		
